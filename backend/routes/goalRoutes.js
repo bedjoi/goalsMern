@@ -3,12 +3,22 @@ const router = express.Router()
 
 router.get("/", (req, res) => {
     res.status(200).json({
-        message:"suis tres sur de moi meme"
+        message:"get goals"
     })
 })
 router.post("/", (req, res) => {
     res.status(200).json({
-        message:"suis tres sur de moi meme"
+        message:"post goals"
+    })
+})
+router.put("/:id", (req, res) => {
+    res.status(200).json({
+        message:`update goal ${req.params.id}`
+    })
+})
+router.delete("/:id", (req, res) => {
+    res.status(200).json({
+        message:`delete goal ${req.params.id}`
     })
 })
 module.exports = router
