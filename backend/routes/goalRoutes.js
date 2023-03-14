@@ -3,6 +3,7 @@ const { getGoal } = require("../controllers/goalsControllers")
 const router = express.Router()
 
 router.get("/", getGoal)
+
 router.post("/", (req, res) => {
     res.status(200).json({
         message:"post goals"
