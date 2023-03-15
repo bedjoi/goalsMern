@@ -3,8 +3,13 @@ const getGoal = (req, res) => {
         message:"get goals"
     })
 }
-const postGoal = (req, res) => {
-    res.status(200).json({
+const setGoal = (req, res) => {
+    console.log(req.body)
+    if (!req.body.text) {
+        res.status(400)
+        throw new Error('please add a text field');
+    }
+    res.status(201).json({
         message:"post goals"
     })
 }
@@ -20,7 +25,7 @@ const deleteGoal = (req, res) => {
 }
 module.exports={
     getGoal,
-    postGoal,
+    setGoal,
     updateGoal,
     deleteGoal
 
